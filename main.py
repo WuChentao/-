@@ -55,8 +55,8 @@ data = {
   "city":{"value":city,"color":get_random_color()},
   "weather":{"value":wea,"color":get_random_color()},
   "temperature":{"value":temperature,"color":get_random_color()},
-  "min_temperature":{"value":temperature.min,"color":get_random_color()},
-  "max_temperature":{"value":max.temperature,"color":get_random_color()},
+  "min_temperature":{"value":temperature(℃),"color":get_random_color()},
+  "max_temperature":{"value":temperature,"color":get_random_color()},
   "love_days":{"value":get_count()},
   "birthday_left":{"value":get_birthday()},
   "words":{"value":get_words(), "color":get_random_color()}
