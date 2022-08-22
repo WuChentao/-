@@ -55,7 +55,7 @@ data = {
   "city":{"value":city,"color":get_random_color()},
   "weather":{"value":wea,"color":get_random_color()},
   "temperature":{"value":temperature,"color":get_random_color()},
-  "min_temperature":{"value":temperature,"color":get_random_color()},
+  "min_temperature":{"value":"未知","color":get_random_color()},
   "max_temperature":{"value":temperature,"color":get_random_color()},
   "love_days":{"value":get_count()},
   "birthday_left":{"value":get_birthday()},
