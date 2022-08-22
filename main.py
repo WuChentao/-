@@ -48,9 +48,10 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, temperature = get_weather()
+week_list = ["一","二","三","四","五","六","日"]
 data = {
   "today":{"value":today.strftime('%Y-%m-%d'),"color":get_random_color()},
-  "week":{"value":today.isoweekday()},
+  "week":{"value":week_list[today.strftime('%Y-%m-%d').weekday()]},
   "city":{"value":city,"color":get_random_color()},
   "weather":{"value":wea,"color":get_random_color()},
   "temperature":{"value":temperature,"color":get_random_color()},
