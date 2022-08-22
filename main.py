@@ -6,7 +6,6 @@ import requests
 import os
 import random
 
-today1 =datetime.date.today()
 today = datetime.now()
 start_date = os.environ['START_DATE']
 city = os.environ['CITY']
@@ -28,6 +27,10 @@ def get_weather():
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
   return delta.days
+
+def get_today():
+  to = today
+  return to.days
 
 def get_birthday():
   next = datetime.strptime(str(date.today().year) + "-" + birthday, "%Y-%m-%d")
@@ -51,6 +54,6 @@ wm = WeChatMessage(client)
 wea, temperature = get_weather()
 
 ci = city
-data = {"today":{"value":today1},"city":{"value":ci},"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
+data = {"today":{"value":get_today()},"city":{"value":ci},"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
