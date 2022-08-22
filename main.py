@@ -51,7 +51,7 @@ wea, temperature = get_weather()
 week_list = ["一","二","三","四","五","六","日"]
 data = {
   "today":{"value":today.strftime('%Y-%m-%d'),"color":get_random_color()},
-  "week":{"value":week_list[datetime.date(today.strftime('%Y-%m-%d')).weekday()]},
+  "week":{"value":week_list[2]},
   "city":{"value":city,"color":get_random_color()},
   "weather":{"value":wea,"color":get_random_color()},
   "temperature":{"value":temperature,"color":get_random_color()},
